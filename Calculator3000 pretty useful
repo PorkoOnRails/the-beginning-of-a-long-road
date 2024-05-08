@@ -1,0 +1,37 @@
+//Trying to make a calculator
+
+const calculator = {
+
+    plus: function(num1, num2) {
+        result = num1 + num2,
+        
+        console.log(num1 + " plus " + num2 + " is " + result)
+    },
+
+    minus: function(num1, num2) {
+        result = num1 - num2,
+        
+        console.log(num1 + " minus " + num2 + " is " + result)
+    },
+
+    multiply: function(num1, num2) {
+        result = num1 * num2,
+        
+        console.log(num1 + " multiply by " + num2 + " is " + result)
+    },
+
+    division: function(num1, num2) {
+
+        result = num1 / num2,
+        
+        console.log(num1 + " divide by " + num2 + " is " + result)
+    }
+}
+
+console.log(calculator.plus(10, 5))
+console.log(calculator.minus(10, 5))
+console.log(calculator.multiply(10, 5))
+console.log(calculator.division(10, 5))
+
+//I dont know why appears this undefined in the end but works for now XD
+//Pretty useless but I'll keep leaning much with this weird kind stuff trying as much to not copy and paste things

@@ -1,0 +1,63 @@
+//Fruits price and amount
+
+const caju = { name: "caju", price: 2, weight: 0.4, amount: 30} 
+
+const pera = { name: "Pera", price: 3.50, weight: 0.5, amount: 10}
+
+const uva = { name: "Uva", price: 1, weight: 0.1, amount: 40}
+
+const pessego = { name: "Pessego", price: 5, weight: 1, amount: 15}
+
+//people have money and strength to carry the fruits
+
+const porko = { name: "Porko", money: 1, strength: 5}
+
+const davis = { name: "Davis", money: 900, strength: 2}
+
+const shaq = { name: "Shaq", money: 2000, strength: 10}
+
+//How strength works, every 1 point in strength is like 10kg that you can carry
+
+var strength = 10;
+
+function peopleStrength(people1, fruit1) {
+
+    let strength1 = people1.strength * strength
+    let amount1 = strength1 * fruit1.weight
+    return people1.name + " have " + strength1 +
+    "Kg of strength and can carry " + amount1 + " amount of " + fruit1.name;
+}
+
+//Make the functions to see how many fruits they can buy and can carry
+
+function youCanBuy(fruit1, people1) {
+    if (fruit1.price < people1.money) {
+         let quantity = people1.money / fruit1.price
+        return "You can buy " + quantity + " of " + fruit1.name + "\n";
+    } else {
+        return "You can't buy anything you poor!\n"
+    }
+}
+
+//Testing
+
+console.log(peopleStrength(porko, caju));
+console.log(youCanBuy(caju, porko));
+
+console.log(peopleStrength(davis, caju))
+console.log(youCanBuy(caju, davis));
+
+console.log(peopleStrength(shaq, caju))
+console.log(youCanBuy(caju, shaq));
+
+//Output
+/*
+Porko have 50Kg of strength and can carry 20 amount of caju
+You can't buy anything you poor!
+
+Davis have 20Kg of strength and can carry 8 amount of caju
+You can buy 450 of caju
+
+Shaq have 100Kg of strength and can carry 40 amount of caju
+You can buy 1000 of caju
+*/

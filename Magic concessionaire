@@ -1,0 +1,89 @@
+//Trying to make a program thats see how much money you have and each car you can buy
+
+const carCompany = ["Fiat", "BMW", "Ferrari"]
+
+const carColor = ["White", "Black", "Gray"]
+
+const people = ["Luka", "Shaquille", "Thiago"]
+
+//List of peaople thats gonna buy and how much money they have
+
+const luka = {
+    fistName: "Luka",
+    lastName: "Doncic",
+    age: 25,
+    money: 40000
+}
+
+const shaq = {
+    fistName: "Shaquille",
+    lastName: "O'Neal",
+    age: 52,
+    money: 200000
+}
+
+const porko = {
+    fistName: "Porko",
+    lastName: "Porkinho",
+    age: 24,
+    money: 4000
+}
+
+//The cars and the things they gonna use to the code work
+
+const fiat = {
+    company: "Fiat Uno",
+    model: ["Fire"],
+    price: 3000,
+    colors: ["White", "Blue"],
+
+    fiatFullSpec: function() {
+        return "This is the " + this.company + "\nWe have the model " + this.model + "\nThe price is " +
+        this.price + " with the colors " + this.colors[0] + " and " + this.colors[1] + " available!\n";
+    }
+}
+
+const ferrari = {
+    company: "Ferrari",
+    model: ["SF90"],
+    price: 150000,
+    colors: ["Red"],
+
+    ferrariFullSpec: function() {
+        return "This is the " + this.company + "\nWe have the model " + this.model + "\nThe price is " +
+        this.price + " with the colors " + this.colors + " and " + this.colors + " available!\n";
+    }
+    
+}
+
+const bmw = {
+    company: "BMW",
+    model: ["X1", "X9"],
+    price: 30000,
+    colors: ["White", "Black", "Blue"],
+
+
+    bmwFullSpec: function() {
+        return "This is the " + this.company + "\nWe have the model " + this.model[0] + " and " + this.model[1] + "\nThe price is " +
+        this.price + " with the colors " + this.colors[0] + ", " + this.colors[1] + " and " + this.colors[2] + " available!\n";
+    }
+}
+
+console.log(fiat.fiatFullSpec());
+console.log(bmw.bmwFullSpec());
+console.log(ferrari.ferrariFullSpec());
+
+//Output
+/*
+This is the Fiat Uno
+We have the model Fire
+The price is 3000 with the colors White and Blue available!
+
+This is the BMW
+We have the model X1 and X9
+The price is 30000 with the colors White, Black and Blue available!
+
+This is the Ferrari
+We have the model SF90
+The price is 150000 with the colors Red and Red available!
+*/

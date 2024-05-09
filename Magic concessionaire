@@ -1,25 +1,16 @@
-//Trying to make a program thats see how much money you have and each car you can buy
-
-const carCompany = ["Fiat", "BMW", "Ferrari"]
-
-const carColor = ["White", "Black", "Gray"]
-
-const people = ["Luka", "Shaquille", "Thiago"]
-
 //List of peaople thats gonna buy and how much money they have
-
-const luka = {
-    fistName: "Luka",
-    lastName: "Doncic",
-    age: 25,
-    money: 40000
-}
 
 const shaq = {
     fistName: "Shaquille",
     lastName: "O'Neal",
     age: 52,
     money: 200000
+}
+const luka = {
+    fistName: "Luka",
+    lastName: "Doncic",
+    age: 25,
+    money: 40000
 }
 
 const porko = {
@@ -29,61 +20,68 @@ const porko = {
     money: 4000
 }
 
-//The cars and the things they gonna use to the code work
+//Cars
 
 const fiat = {
     company: "Fiat Uno",
     model: ["Fire"],
     price: 3000,
     colors: ["White", "Blue"],
-
-    fiatFullSpec: function() {
-        return "This is the " + this.company + "\nWe have the model " + this.model + "\nThe price is " +
-        this.price + " with the colors " + this.colors[0] + " and " + this.colors[1] + " available!\n";
-    }
-}
+ }
 
 const ferrari = {
     company: "Ferrari",
     model: ["SF90"],
     price: 150000,
     colors: ["Red"],
-
-    ferrariFullSpec: function() {
-        return "This is the " + this.company + "\nWe have the model " + this.model + "\nThe price is " +
-        this.price + " with the colors " + this.colors + " and " + this.colors + " available!\n";
-    }
-    
 }
 
 const bmw = {
     company: "BMW",
-    model: ["X1", "X9"],
+    model: ["X1"],
     price: 30000,
-    colors: ["White", "Black", "Blue"],
+    colors: ["White", "Black", "Blue"]        
+ }
 
+//Creating a function to don't have to make as much as copying and paste
 
-    bmwFullSpec: function() {
-        return "This is the " + this.company + "\nWe have the model " + this.model[0] + " and " + this.model[1] + "\nThe price is " +
-        this.price + " with the colors " + this.colors[0] + ", " + this.colors[1] + " and " + this.colors[2] + " available!\n";
-    }
+function fullSpec(car) {
+
+    return "This is the " + car.company + "\nWe have the model " + car.model + "\nThe price is " +
+        car.price + " with the colors " + car.colors + " available!\n";
 }
 
-console.log(fiat.fiatFullSpec());
-console.log(bmw.bmwFullSpec());
-console.log(ferrari.ferrariFullSpec());
+function buyACar(car1, people1) {
+    if (car1.price < people1.money) {
+        return "Mr." + people1.fistName + " " + people1.lastName + " you have the money to buy our " + car1.company + " model " + car1.model + "! :)\n"
+    } else {
+        return people1.fistName + " doesn't have the money to buy anything\nGo find a decent job! >:(\n"
+    }
+}
+ 
+console.log(fullSpec(fiat))
+console.log(fullSpec(bmw))
+console.log(fullSpec(ferrari))
+
+console.log(buyACar(bmw, porko))
+console.log(buyACar(ferrari, shaq))
 
 //Output
 /*
 This is the Fiat Uno
 We have the model Fire
-The price is 3000 with the colors White and Blue available!
+The price is 3000 with the colors White,Blue available!
 
 This is the BMW
-We have the model X1 and X9
-The price is 30000 with the colors White, Black and Blue available!
+We have the model X1
+The price is 30000 with the colors White,Black,Blue available!
 
 This is the Ferrari
 We have the model SF90
-The price is 150000 with the colors Red and Red available!
+The price is 150000 with the colors Red available!
+
+Porko doesn't have the money to buy anything
+Go find a decent job! >:(
+
+Mr.Shaquille O'Neal you have the money to buy our Ferrari model SF90! :)
 */

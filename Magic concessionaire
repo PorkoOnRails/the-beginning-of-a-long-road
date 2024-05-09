@@ -1,87 +1,42 @@
-//List of peaople thats gonna buy and how much money they have
+//The era of Constructors
 
-const shaq = {
-    fistName: "Shaquille",
-    lastName: "O'Neal",
-    age: 52,
-    money: 200000
-}
-const luka = {
-    fistName: "Luka",
-    lastName: "Doncic",
-    age: 25,
-    money: 40000
-}
+function Car(make, model, year, color, color2) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.color = color;
+    this.color2 = color2;
 
-const porko = {
-    fistName: "Porko",
-    lastName: "Porkinho",
-    age: 24,
-    money: 4000
-}
+    //Trying to make a if statement that put the " and " when have more than 2 options of color but didn't work
 
-//Cars
-
-const fiat = {
-    company: "Fiat Uno",
-    model: ["Fire"],
-    price: 3000,
-    colors: ["White", "Blue"],
- }
-
-const ferrari = {
-    company: "Ferrari",
-    model: ["SF90"],
-    price: 150000,
-    colors: ["Red"],
-}
-
-const bmw = {
-    company: "BMW",
-    model: ["X1"],
-    price: 30000,
-    colors: ["White", "Black", "Blue"]        
- }
-
-//Creating a function to don't have to make as much as copying and paste
-
-function fullSpec(car) {
-
-    return "This is the " + car.company + "\nWe have the model " + car.model + "\nThe price is " +
-        car.price + " with the colors " + car.colors + " available!\n";
-}
-
-function buyACar(car1, people1) {
-    if (car1.price < people1.money) {
-        return "Mr." + people1.fistName + " " + people1.lastName + " you have the money to buy our " + car1.company + " model " + car1.model + "! :)\n"
-    } else {
-        return people1.fistName + " doesn't have the money to buy anything\nGo find a decent job! >:(\n"
+    this.fullSpec = function() {/*
+        if (this.color2 == "Blue") {
+            return `We have the ${this.make} model ${this.model} year ${this.year} with the color ${this.color} and ${this.color2}`;
+        } else*/
+        return `We have the ${this.make} model ${this.model} year ${this.year} with the color ${this.color}` //if (this.color2 == "Blue") { "and " + this.color2}; }
     }
 }
- 
-console.log(fullSpec(fiat))
-console.log(fullSpec(bmw))
-console.log(fullSpec(ferrari))
 
-console.log(buyACar(bmw, porko))
-console.log(buyACar(ferrari, shaq))
+const uno = new Car("Fiat", "Fire", 2010, "White");
+
+const sf90 = new Car("Ferrari", "SF90", 2019, "Red");
+
+//Testing to see if I can add some more information for the vehicle later on
+
+console.log(uno)
+
+uno.color2 = "Blue";
+
+console.log(uno)
+
+console.log(uno.fullSpec())
+console.log(sf90.fullSpec())
 
 //Output
 /*
-This is the Fiat Uno
-We have the model Fire
-The price is 3000 with the colors White,Blue available!
+Car {make: 'Fiat', model: 'Fire', year: 2010, color: 'White', color2: undefined, …}
+Car {make: 'Fiat', model: 'Fire', year: 2010, color: 'White', color2: 'Blue', …}
 
-This is the BMW
-We have the model X1
-The price is 30000 with the colors White,Black,Blue available!
-
-This is the Ferrari
-We have the model SF90
-The price is 150000 with the colors Red available!
-
-Porko doesn't have the money to buy anything
-Go find a decent job! >:(
-
-Mr.Shaquille O'Neal you have the money to buy our Ferrari model SF90! :)
+We have the Fiat model Fire year 2010 with the color White
+We have the Ferrari model SF90 year 2019 with the color Red
 */

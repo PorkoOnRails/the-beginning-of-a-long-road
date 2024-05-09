@@ -1,42 +1,78 @@
 //The era of Constructors
 
-function Car(make, model, year, color, color2) {
+function Car(make, model, year, color, color2, color3) {
     this.make = make;
     this.model = model;
     this.year = year;
     this.color = color;
     this.color2 = color2;
+    this.color3 = color3;
 
-    //Trying to make a if statement that put the " and " when have more than 2 options of color but didn't work
+    //Trying to make a if statement that put the " and " when have more than 2 options of color, work for now in "Best" way
 
-    this.fullSpec = function() {/*
-        if (this.color2 == "Blue") {
-            return `We have the ${this.make} model ${this.model} year ${this.year} with the color ${this.color} and ${this.color2}`;
-        } else*/
-        return `We have the ${this.make} model ${this.model} year ${this.year} with the color ${this.color}` //if (this.color2 == "Blue") { "and " + this.color2}; }
+    this.fullSpec = function() {
+
+        fullSpecMsg = `We have the ${this.make} model ${this.model} year ${this.year} with the color ${this.color}`;
+
+        if (this.color3 != undefined) {
+            return `${fullSpecMsg}, ${this.color2} and ${this.color3}`;
+        }
+
+        else if (this.color2 != undefined) {
+            return `${fullSpecMsg} and ${this.color2}`;
+        }
+
+        else
+        return fullSpecMsg;
     }
 }
 
-const uno = new Car("Fiat", "Fire", 2010, "White");
+//My goal is to make a eficient way of add more informations about the cars and don't have to repeat much code
+
+//A small correction about the car models because I don't understand much
+//probably still wrong
+
+const uno = new Car("Fiat", "Uno", 2010, "White");
 
 const sf90 = new Car("Ferrari", "SF90", 2019, "Red");
 
-//Testing to see if I can add some more information for the vehicle later on
+//Trying to add more than 1 option in the car model
+
+const bmw = new Car("BMW", ["X1", "X9"], 2014, "Black");
+
+console.log(bmw)
+
+console.log(bmw.fullSpec())
+
+
 
 console.log(uno)
+
+console.log(uno.fullSpec())
 
 uno.color2 = "Blue";
 
 console.log(uno)
 
 console.log(uno.fullSpec())
-console.log(sf90.fullSpec())
+
+uno.color3 = "Red";
+
+console.log(uno)
+
+console.log(uno.fullSpec())
 
 //Output
 /*
-Car {make: 'Fiat', model: 'Fire', year: 2010, color: 'White', color2: undefined, …}
-Car {make: 'Fiat', model: 'Fire', year: 2010, color: 'White', color2: 'Blue', …}
+Car {make: 'BMW', model: Array(2), year: 2014, color: 'Black', color2: undefined, …}
+We have the BMW model X1,X9 year 2014 with the color Black
 
-We have the Fiat model Fire year 2010 with the color White
-We have the Ferrari model SF90 year 2019 with the color Red
+Car {make: 'Fiat', model: 'Uno', year: 2010, color: 'White', color2: undefined, …}
+We have the Fiat model Uno year 2010 with the color White
+
+Car {make: 'Fiat', model: 'Uno', year: 2010, color: 'White', color2: 'Blue', …}
+We have the Fiat model Uno year 2010 with the color White and Blue
+
+Car {make: 'Fiat', model: 'Uno', year: 2010, color: 'White', color2: 'Blue', …}
+We have the Fiat model Uno year 2010 with the color White, Blue and Red
 */

@@ -1,3 +1,10 @@
+
+function number1(keydown) {
+    console.log('A tecla 1 foi pressionada');
+    return keydown = 1;
+}
+
+
 function inputAdd(num1, num2) {
 
     var num1 = prompt("Enter the fist number");

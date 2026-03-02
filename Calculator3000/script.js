@@ -1,54 +1,27 @@
-
-function number1(keydown) {
-    console.log('A tecla 1 foi pressionada');
-    return keydown = 1;
+//Function to test the click in the buttons
+function inputPlus() {
+    alert("apertado");
 }
 
+//Create a shortcut to use the value of the numbers
+var valueNum0 = document.getElementById("number0").value;
+var valueNum1 = document.getElementById("number1").value;
+var valueNum2 = document.getElementById("number2").value;
+var valueNum3 = document.getElementById("number3").value;
+var valueNum4 = document.getElementById("number4").value;
+var valueNum5 = document.getElementById("number5").value;
+var valueNum6 = document.getElementById("number6").value;
+var valueNum7 = document.getElementById("number7").value;
+var valueNum8 = document.getElementById("number8").value;
+var valueNum9 = document.getElementById("number9").value;
 
-function inputAdd(num1, num2) {
+var resultNumber = document.getElementById("numberResult");
 
-    var num1 = prompt("Enter the fist number");
-    var num1Checked = Number(num1);
+//Function to change the contend of the result that's display
+function displayResult(num1, numb2) {
 
-    var num2 = prompt("Enter the second number");
-    var num2Checked = Number(num2);
+    result = num1 + numb2;
 
-    alert("The some of the numbers is " + (num1Checked + num2Checked));
-
+    resultNumber.textContent = "Resultado da operação é" + result;
 }
 
-function inputSub(num1, num2) {
-
-    var num1 = prompt("Enter the fist number");
-    var num1Checked = Number(num1);
-
-    var num2 = prompt("Enter the second number");
-    var num2Checked = Number(num2);
-
-    alert("The some of the numbers is " + (num1Checked - num2Checked));
-
-}
-
-function inputDiv(num1, num2) {
-
-    var num1 = prompt("Enter the fist number");
-    var num1Checked = Number(num1);
-
-    var num2 = prompt("Enter the second number");
-    var num2Checked = Number(num2);
-
-    alert("The some of the numbers is " + (num1Checked / num2Checked));
-
-}
-
-function inputMult(num1, num2) {
-
-    var num1 = prompt("Enter the fist number");
-    var num1Checked = Number(num1);
-
-    var num2 = prompt("Enter the second number");
-    var num2Checked = Number(num2);
-
-    alert("The some of the numbers is " + (num1Checked * num2Checked));
-
-}
